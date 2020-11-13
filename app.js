@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const db = require('./db');
 const morgan = require('morgan');
 const router = express.Router();
 const app = express();
@@ -10,12 +11,10 @@ const passport = require("passport");
 
 //passport config:
 require('./config/passport')(passport)
-//mongoose
-mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
-.catch((err)=> console.log(err));
 
 //EJS
+const port = 8080;
+
 app.set('view engine','ejs');
 app.use(expressEjsLayout);
 //BodyParser
@@ -40,4 +39,4 @@ app.use((req,res,next)=> {
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 
-app.listen(3000); 
+app.listen(port); 

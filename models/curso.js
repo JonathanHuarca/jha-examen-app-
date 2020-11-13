@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TaskSchema = Schema({
+const CursoSchema = Schema({
   nombre: String,
   ciclo: Number,
   nota: Number ,
@@ -13,4 +13,4 @@ const TaskSchema = Schema({
   }
 });
 
-module.exports = mongoose.model('tasks', TaskSchema);
+module.exports = mongoose.model('curso', CursoSchema);

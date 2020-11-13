@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const {ensureAuthenticated} = require('../config/auth') 
-const Task = require('../models/task');
+const Task = require('../models/curso');
 //login page
 router.get('/', (req,res)=>{
     res.render('welcome');
